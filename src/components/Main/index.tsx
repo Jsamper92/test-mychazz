@@ -11,7 +11,7 @@ function Main() {
       <Link href="/detail">
         {t('hola.chazz')}
       </Link>
-      <Image src="/fondo.png" alt="me" width="100%"/>
+      <Image src="/fondo.png" alt="me" fill={true}/>
     </>
   );
 }
