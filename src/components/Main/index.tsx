@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { ReactPortal } from 'react';
 import { useTranslations } from 'next-intl';
 
