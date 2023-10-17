@@ -8,7 +8,7 @@ function Main() {
   return (
     <>
       <Link href="/detail">
-        {t('test')}
+        {t('hola.chazz')}
       </Link>
     </>
   );
