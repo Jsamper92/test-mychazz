@@ -3,20 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "graph": "yarn graphql-codegen init",
+    "dev": "next dev -p 3333",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.6",
+    "@sanity/client": "^6.6.0",
+    "@sanity/document-internationalization": "^2.0.1",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.18.1",
+    "graphql": "^16.8.1",
     "i18next": "^23.5.1",
     "next": "13.5.5",
     "next-i18next": "^14.0.3",
     "next-intl": "^2.20.2",
     "next-language-detector": "^1.0.2",
+    "next-sanity": "^5.5.8",
     "react": "^18",
     "react-dom": "^18",
-    "react-i18next": "^13.3.0"
+    "react-i18next": "^13.3.0",
+    "sanity": "^3.18.1",
+    "styled-components": "5.2"
   },
   "devDependencies": {
     "@types/node": "^20",
