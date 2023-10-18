@@ -26,7 +26,7 @@ function Main() {
         fill
         style={{
           objectFit: 'cover',
-          z-index: '-1000',
+          zIndex: '-1000',
         }}
       />
       <div>
