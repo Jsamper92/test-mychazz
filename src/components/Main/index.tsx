@@ -20,6 +20,12 @@ function Main() {
       <Image
         src="/fondo_chazz.png" 
         alt="fondo"
+        placeholder="blur"
+        quality={100}
+        fill
+        style={{
+          objectFit: 'cover',
+        }}
       />
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
