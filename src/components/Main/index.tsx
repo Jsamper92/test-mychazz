@@ -19,7 +19,17 @@ function Main() {
         <p>{data.allPost[0].__typename}</p>
         <p>{data.allPost[0]._id}</p>
       </div>
-      <Image width={'500'} height={500} src="/fondo.png" alt="me" />
+      <Image
+        src="/fondo.png" 
+        alt="fondo"
+        placeholder="blur"
+        quality={100}
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: 'cover',
+        }}
+      />
     </>
   );
 }
