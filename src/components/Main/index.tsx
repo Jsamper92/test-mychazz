@@ -22,13 +22,7 @@ function Main() {
       <Image
         src="/fondo.png" 
         alt="fondo"
-        placeholder="blur"
-        quality={100}
-        fill
-        sizes="100vw"
-        style={{
-          objectFit: 'cover',
-        }}
+        width={100%}
       />
     </>
   );
