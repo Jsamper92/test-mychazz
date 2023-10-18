@@ -32,11 +32,14 @@ function Main() {
 
       <Image
         src="/logo_chazz.png" 
-        alt="fondo"
+        alt="logo"
+        style={{
+          paddingLeft: '50px',
+        }}
       />
       
       <div>
-        <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
+        <p><b>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</b></p>
         <p>{data.allPost[0].title}</p>
         <p>{data.allPost[0].__typename}</p>
         <p>{data.allPost[0]._id}</p>
