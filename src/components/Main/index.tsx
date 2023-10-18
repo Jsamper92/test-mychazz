@@ -21,6 +21,7 @@ function Main() {
         src="/fondo_chazz.png" 
         alt="fondo"
         placeholder="blur"
+        layout="fill"
         quality={100}
         fill
         style={{
