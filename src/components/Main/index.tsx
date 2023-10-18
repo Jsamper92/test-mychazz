@@ -14,15 +14,17 @@ function Main() {
 
   return (
     <>
+      <Image
+        src="/fondo_chazz.png" 
+        alt="fondo"
+      />
       <div>
+        <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
         <p>{data.allPost[0].title}</p>
         <p>{data.allPost[0].__typename}</p>
         <p>{data.allPost[0]._id}</p>
       </div>
-      <Image
-        src="/fondo.png" 
-        alt="fondo"
-      />
+
     </>
   );
 }
