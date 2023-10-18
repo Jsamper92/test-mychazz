@@ -22,7 +22,10 @@ function Main() {
       <Image
         src="/fondo.png" 
         alt="fondo"
-        width={100%}
+        style={{
+          width: '100%',
+          height: 'auto',
+        }}
       />
     </>
   );
