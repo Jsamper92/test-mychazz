@@ -13,19 +13,41 @@ function Main() {
   if (loading) return <p>Loading...</p>;
 
 
-  
+
 
   return (
     <>
       <Image
-        src="/fondo_chazz.png" 
+        width={500}
+        height={500}
+        src="/fondo_chazz.png"
         alt="fondo"
       />
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
-        <p>{data.allPost[0].title}</p>
-        <p>{data.allPost[0].__typename}</p>
-        <p>{data.allPost[0]._id}</p>
+        {data.allAuthor.map(({ name, language, __typename, _id }: any) => {
+
+          return (
+            <div style={{ border: '1px solid black', margin: 5 }} key={_id}>
+              <p>
+                <strong>name:</strong>
+                {name}
+              </p>
+              <p>
+                <strong>language:</strong>
+                {language}
+              </p>
+              <p>
+                <strong>typename:</strong>
+                {__typename}
+              </p>
+              <p>
+                <strong>id:</strong>
+                {_id}
+              </p>
+            </div>
+          )
+        })}
       </div>
 
     </>
