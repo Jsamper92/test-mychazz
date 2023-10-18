@@ -29,6 +29,12 @@ function Main() {
           zIndex: '-1000',
         }}
       />
+
+      <Image
+        src="/logo_chazz.png" 
+        alt="fondo"
+      />
+      
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
         <p>{data.allPost[0].title}</p>
