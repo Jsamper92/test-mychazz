@@ -22,7 +22,24 @@ function Main() {
         height={500}
         src="/fondo_chazz.png"
         alt="fondo"
+        placeholder="blur"
+        layout="fill"
+        quality={100}
+        fill
+        style={{
+          objectFit: 'cover',
+          zIndex: '-1000',
+        }}
       />
+
+      <Image
+        src="/logo_chazz.png" 
+        alt="logo"
+        style={{
+          paddingLeft: '50px',
+        }}
+      />
+      
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
         {data.allAuthor.map(({ name, language, __typename, _id }: any) => {
