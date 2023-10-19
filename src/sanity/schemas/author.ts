@@ -6,20 +6,18 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
-      title: 'Name',
-      type: 'string',
+      name: 'title',
+      type: 'string'
     }),
     defineField({
-      // should match 'languageField' plugin configuration setting, if customized
-      name: 'language',
-      type: 'string',
-      readOnly: true,
-    })
+      name: 'name',
+      title: 'Name',
+      type: 'localeString',
+    }),
   ],
   preview: {
     select: {
-      title: 'name',
+      title: 'title',
       media: 'image',
     },
   },

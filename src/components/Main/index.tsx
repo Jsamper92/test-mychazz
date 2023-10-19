@@ -33,34 +33,41 @@ function Main() {
       />
 
       <Image
-        src="/logo_chazz.png" 
+        src="/logo_chazz.png"
         alt="logo"
         style={{
           paddingLeft: '50px',
         }}
       />
-      
+
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
-        {data.allAuthor.map(({ name, language, __typename, _id }: any) => {
+        {data.allAuthor.map(({ title, name, language, _type, _id }: any) => {
 
           return (
             <div style={{ border: '1px solid black', margin: 5 }} key={_id}>
               <p>
-                <strong>name:</strong>
-                {name}
-              </p>
-              <p>
-                <strong>language:</strong>
-                {language}
+                <strong>key literal:</strong>
+                {title}
               </p>
               <p>
                 <strong>typename:</strong>
-                {__typename}
+                {_type}
               </p>
               <p>
                 <strong>id:</strong>
                 {_id}
+              </p>
+              <p>
+                <strong>language:</strong>
+                {Object.entries(name).map((item: any, index) => {
+                  const [key, value] = item;
+                  return (
+                    <li key={index}>
+                      <strong>{key}</strong>: {value}
+                    </li>
+                  )
+                })}
               </p>
             </div>
           )
