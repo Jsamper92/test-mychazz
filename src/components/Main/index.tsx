@@ -1,5 +1,5 @@
-/* import Image from 'next/image';
- */import React from 'react';
+import Image from 'next/image';
+import React from 'react';
 import { useQuery } from '@apollo/client';
 import graphQLClient from '@/lib/client/apollo';
 import { GET_POSTS } from '@/queries/test';
@@ -13,7 +13,7 @@ function Main() {
 
   return (
     <>
-     {/*  <Image
+      <Image
         width={500}
         height={500}
         src="/fondo_chazz.png"
@@ -34,7 +34,7 @@ function Main() {
         style={{
           paddingLeft: '50px',
         }}
-      /> */}
+      />
 
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
