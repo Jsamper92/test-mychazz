@@ -1,4 +1,3 @@
-export const apiVersion = `${new Date().toLocaleDateString()}`;
 
 export const dataset = assertValue(
   process.env.NEXT_PUBLIC_SANITY_STUDIO_DATASET,

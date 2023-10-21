@@ -12,7 +12,6 @@ export default defineCliConfig({
     graphql: [
         {
             playground: true,
-            tag: `${new Date().toLocaleDateString()}`,
             id: dataset,
         }
     ]
