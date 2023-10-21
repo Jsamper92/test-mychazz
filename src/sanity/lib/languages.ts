@@ -1,9 +1,7 @@
-import { defineField } from "sanity";
-
 export const supportedLanguages = [
     { id: 'en', title: 'English', isDefault: true },
-    { id: 'no', title: 'Norwegian' },
-    { id: 'fr', title: 'French' }
+    { id: 'es', title: 'Español' },
+    { id: 'pt', title: 'Portugues' }
 ]
 
 export const baseLanguage = supportedLanguages.find(l => l.isDefault);

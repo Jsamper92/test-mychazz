@@ -4,22 +4,16 @@
 **/
 import { defineCliConfig } from 'sanity/cli'
 
-const projectId = process.env.SANITY_STUDIO__SANITY_PROJECT_ID
-const dataset = process.env.SANITY_STUDIO_SANITY_DATASET
+const projectId = process.env.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID;
+const dataset = process.env.NEXT_PUBLIC_SANITY_STUDIO_DATASET;
 
 export default defineCliConfig({
     api: { projectId, dataset },
     graphql: [
         {
             playground: true,
-            tag: `production-${Date.now()}`,
-            id: 'production',
-        },
-        {
-            playground: true,
-            tag: `integration-${Date.now()}`,
-            id: 'integration',
+            tag: `${new Date().toLocaleDateString()}`,
+            id: dataset,
         }
-
     ]
 })

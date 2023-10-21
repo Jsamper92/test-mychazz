@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import graphQLClient from '@/lib/client/apollo';
 import { GET_POSTS } from '@/queries/test';
+import graphQLClient from '@/sanity/lib/client/apollo';
 
 
 

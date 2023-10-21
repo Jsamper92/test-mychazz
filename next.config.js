@@ -1,5 +1,12 @@
-const { i18n } = require('./next-i18next.config');
-const path = require('path');
+const [
+    path, packageJson, internationalization
+] = [
+        require('path'),
+        require('./package.json'),
+        require('./next-i18n.config')
+    ];
+
+const { i18n } = internationalization;
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     i18n,
@@ -9,6 +16,9 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
+    env: {
+        version: packageJson.version
+    }
 }
 
 module.exports = nextConfig
