@@ -12,8 +12,14 @@ export default defineCliConfig({
     graphql: [
         {
             playground: true,
-            tag: 'experiment',
+            tag: `production-${Date.now()}`,
             id: 'production',
+        },
+        {
+            playground: true,
+            tag: `integration-${Date.now()}`,
+            id: 'integration',
         }
+
     ]
 })
