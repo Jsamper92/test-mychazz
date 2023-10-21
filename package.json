@@ -15,7 +15,6 @@
     "@sanity/document-internationalization": "^2.0.1",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.18.1",
-    "env-cmd": "^10.1.0",
     "graphql": "^16.8.1",
     "i18next": "^23.5.1",
     "next": "13.5.5",
@@ -27,8 +26,7 @@
     "react-dom": "^18",
     "react-error-boundary": "^4.0.11",
     "react-i18next": "^13.3.0",
-    "sanity": "^3.18.1",
-    "styled-components": "5.2"
+    "sanity": "^3.18.1"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.5.5",
