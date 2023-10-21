@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:cms": "sanity graphql deploy"
+    "start:sanity": "sanity start",
+    "build:sanity": "sanity build",
+    "deploy:cms": "sanity graphql deploy",
+    "deploy:sanity": "sanity deploy"
   },
   "dependencies": {
     "@apollo/client": "^3.8.6",
@@ -26,7 +29,8 @@
     "react-dom": "^18",
     "react-error-boundary": "^4.0.11",
     "react-i18next": "^13.3.0",
-    "sanity": "^3.18.1"
+    "sanity": "^3.18.1",
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.5.5",
@@ -39,6 +43,7 @@
     "eslint-config-next": "^13.5.5",
     "eslint-config-prettier": "^9.0.0",
     "sass": "^1.69.4",
+    "serve": "^14.2.1",
     "typescript": "^5"
   }
 }

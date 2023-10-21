@@ -20,7 +20,7 @@ jobs:
       - name: Deploy Sanity Studio
         run: |
           set -e
-          SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" npx sanity deploy
+          SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" npx sanity graphql deploy
   Deploy-Preview:
     runs-on: ubuntu-latest
     steps:
