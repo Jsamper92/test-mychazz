@@ -1,18 +1,13 @@
 // ./schemas/localeStringType.ts
 
-import { unescape } from 'querystring'
-import {defineType, defineField} from 'sanity'
-
+import { defineType, defineField } from 'sanity';
+import languages from '../../../public/locales/languages';
 // Since schemas are code, we can programmatically build
 // fields to hold translated values. We'll use this array
 // of languages to determine which fields to define.
-const supportedLanguages = [
-  { id: 'en', title: 'English', isDefault: true },
-  { id: 'es', title: 'Español' },
-  { id: 'pt', title: 'Portugues' }
-]
+const supportedLanguages = languages;
 
-export const baseLanguage = supportedLanguages.find(l => l.isDefault)
+export const baseLanguage = supportedLanguages.find((l) => l.isDefault);
 
 export const localeString = defineType({
   title: 'Localized string',
@@ -25,14 +20,16 @@ export const localeString = defineType({
     {
       title: 'Translations',
       name: 'translations',
-      options: {collapsible: true, collapsed: false},
-    }
+      options: { collapsible: true, collapsed: false },
+    },
   ],
   // Dynamically define one field per language
-  fields: supportedLanguages.map(lang => defineField({
-    title: lang.title,
-    name: lang.id,
-    type: 'string',
-    fieldset: lang.isDefault ? undefined : 'translations'
-  }))
-})
+  fields: supportedLanguages.map((lang) =>
+    defineField({
+      title: lang.title,
+      name: lang.id,
+      type: 'string',
+      fieldset: lang.isDefault ? undefined : 'translations',
+    })
+  ),
+});

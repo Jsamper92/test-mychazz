@@ -1,4 +1,4 @@
-import { createClient } from 'next-sanity'
+import { createClient } from 'next-sanity';
 
 import { dataset, projectId, useCdn, token } from '../../env';
 
@@ -7,4 +7,5 @@ export const client = createClient({
   projectId,
   useCdn,
   token,
-})
+  ignoreBrowserTokenWarning: true,
+});

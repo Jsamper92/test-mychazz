@@ -1,13 +1,13 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'author',
-  title: 'Author',
+  name: 'component',
+  title: 'Component',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      type: 'string'
+      type: 'string',
     }),
     defineField({
       name: 'name',
@@ -19,6 +19,6 @@ export default defineType({
     select: {
       title: 'title',
       media: 'image',
-    }
-  }
-})
+    },
+  },
+});

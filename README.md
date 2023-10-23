@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### npm scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Script(s)             | Description                                       |
+| --------------------- | ------------------------------------------------- |
+| `dev`                 | Run server next.js mode development               |
+| `build`               | Build project next.js                             |
+| `lint`                | lint project next.js                              |
+| `start:sanity`        | Launch build sanity studio.                       |
+| `build:sanity`        | Build sanity studio on folder `.sanity/`          |
+| `deploy:graphql`      | Deploy graphql BBDD                               |
+| `deploy:sanity`       | Deploy sanity studio                              |
+| `design-tokens-utils` | Build architecture tokens by `tokens/tokens.json` |
 
-## Learn More
+### Important files and folders
 
-To learn more about Next.js, take a look at the following resources:
+| File(s)                          | Description                                                                                                                                                                                                                                                                    |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/pages`                         | This folder is essential in Next.js and contains the routes and pages of your application. Each JavaScript (or TypeScript) file within this folder becomes an accessible route in your application. For example, `/pages/index.tsx` corresponds to the main page of your site. |
+| `/components`                    | Reusable components of your application, such as navigation bars, footers, custom buttons, etc.                                                                                                                                                                                |
+| `/styles`                        | If you are using CSS to style your application, you can place style files (CSS, SCSS, etc.) in this folder. These styles can be imported into your components.                                                                                                                 |
+| `/public`                        | The `/public` folder is used for static files like images, fonts, and other resources. Files here can be accessed directly from the browser.                                                                                                                                   |
+| `/lib`                           | In this folder, you can place shared JavaScript code that isn't a page or component, such as utilities or helper functions.                                                                                                                                                    |
+| `/docs`                          | Optionally, you can create a documentation folder to store Markdown (MD) files that explain how your application works, how to set it up, and other important details.                                                                                                         |
+| `docs/sanity`                    | docs sanity cms                                                                                                                                                                                                                                                                |
+| `sanity.config.ts`               | Config file for Sanity Studio                                                                                                                                                                                                                                                  |
+| `sanity.cli.ts`                  | Config file for Sanity CLI                                                                                                                                                                                                                                                     |
+| `/pages/index.tsx`               | Landing page for `/`.                                                                                                                                                                                                                                                          |
+| `/pages/studio/[[...index]].tsx` | Where Sanity Studio is mounted                                                                                                                                                                                                                                                 |
+| `/sanity/schemas.ts`             | Where Sanity Studio gets its content types from                                                                                                                                                                                                                                |
+| `/sanity/env.ts`                 | Configuration for the Sanity project and dataset                                                                                                                                                                                                                               |
+| `/sanity/schemas.ts`             | Where Sanity Studio gets its content types from                                                                                                                                                                                                                                |
+| `/sanity/lib/client.ts`          | Sanity client configured based on `env.ts`                                                                                                                                                                                                                                     |
+| `/sanity/lib/apollo.ts`          | Apollo graphql client configured based on `env.ts`                                                                                                                                                                                                                             |
+| `/sanity/lib/image.ts`           | Sanity image builder - unused in this template, but is needed to render Sanity images                                                                                                                                                                                          |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+All pages are wrapped in `pages/_document.tsx` and `pages/_app.tsx`.
