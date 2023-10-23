@@ -2,15 +2,15 @@
  * This configuration is used to for the Sanity Studio that’s mounted on the `/app/sanity/[[...index]]/page.tsx` route
  */
 
+import { documentInternationalization } from '@sanity/document-internationalization';
 import { visionTool } from '@sanity/vision';
 import { SchemaTypeDefinition, defineConfig, defineField } from 'sanity';
 import { deskTool } from 'sanity/desk';
-import { documentInternationalization } from '@sanity/document-internationalization';
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { dataset, projectId } from './src/sanity/env';
+import supportedLanguages from './src/sanity/lib/languages';
 import { listSchemaTypes, schema } from './src/sanity/schema';
-import supportedLanguages from './public/locales/languages';
 export default defineConfig({
   basePath: '/studio',
   projectId,

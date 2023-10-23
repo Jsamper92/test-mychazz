@@ -1,7 +1,7 @@
 // ./schemas/localeStringType.ts
 
-import { defineType, defineField } from 'sanity';
-import languages from '../../../public/locales/languages';
+import { defineField, defineType } from 'sanity';
+import languages from '../lib/languages';
 // Since schemas are code, we can programmatically build
 // fields to hold translated values. We'll use this array
 // of languages to determine which fields to define.

@@ -1,8 +1,7 @@
-import Image from 'next/image';
-import React from 'react';
-import { useQuery } from '@apollo/client';
 import { GET_PAGES } from '@/queries/pages';
 import graphQLClient from '@/sanity/lib/client/apollo';
+import { useQuery } from '@apollo/client';
+import Image from 'next/image';
 
 function Main() {
   const { loading, data } = useQuery(GET_PAGES, { client: graphQLClient });
@@ -11,7 +10,7 @@ function Main() {
 
   return (
     <>
-      {/*       <Image
+      <Image
         width={500}
         height={500}
         src="/fondo_chazz.png"
@@ -32,11 +31,11 @@ function Main() {
         style={{
           paddingLeft: '50px',
         }}
-      /> */}
+      />
 
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
-        {data.allAuthor.map(
+        {data.allPages && data.allPages.map(
           ({ title, name, _type, _id }: { [key: string]: string }) => {
             return (
               <div style={{ border: '1px solid black', margin: 5 }} key={_id}>

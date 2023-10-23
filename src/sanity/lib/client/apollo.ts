@@ -1,7 +1,8 @@
 import { dataset, projectId } from '@/sanity/env';
-import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 
-const sanityGraphQLEndpoint = `https://${projectId}.api.sanity.io/v1/graphql/${dataset}/default`;
+const sanityGraphQLEndpoint = `https://${projectId}.api.sanity.io/v2023-08-01/graphql/${dataset}/default`;
+
 const graphQLClient = new ApolloClient({
   link: new HttpLink({
     uri: sanityGraphQLEndpoint,
