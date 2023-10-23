@@ -1,5 +1,4 @@
 import { defineField, defineType } from 'sanity';
-import { MyCustomAddLiteralComponent } from '../components/test';
 
 export default defineType({
   name: 'page',

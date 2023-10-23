@@ -8,6 +8,7 @@ const { i18n } = internationalization;
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n,
+  reactStrictMode: true,
   eslint: {
     dirs: ['pages', 'utils'], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
   },
