@@ -1,23 +1,24 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import React, { ReactPortal } from 'react';
-import { useQuery, gql } from '@apollo/client';
-import graphQLClient from '@/lib/client/apollo';
-import { GET_POSTS } from '@/queries/test';
-
-
+import { GET_PAGES } from '@/queries/pages';
+import { useQuery } from '@apollo/client';
 
 function Main() {
-  const { loading, error, data } = useQuery(GET_POSTS, { client: graphQLClient });
+
+
+  const { loading, data } = useQuery(GET_PAGES, {
+    variables: {
+      title: 'home'
+    }
+  });
+
+
+
+
 
   if (loading) return <p>Loading...</p>;
 
-
-
-
   return (
     <>
-      <Image
+      {/*       <Image
         width={500}
         height={500}
         src="/fondo_chazz.png"
@@ -38,44 +39,51 @@ function Main() {
         style={{
           paddingLeft: '50px',
         }}
-      />
+      /> */}
 
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
-        {data.allAuthor.map(({ title, name, language, _type, _id }: any) => {
+        {data.allPage && data.allPage.map(
+          ({ title, _id, literals, __typename }: { title: string, __typename: string, _id: string, literals: [] }) => {
+            return (
+              <div style={{ border: '1px solid black', padding: 5 }} key={_id}>
+                <p>
+                  <strong style={{ fontWeight: 'bold' }}>Module {__typename}:</strong>
+                  {title}
+                </p>
+                <p>
+                  <strong style={{ fontWeight: 'bold' }}>id:</strong>
+                  {_id}
+                </p>
+                {literals.map(
+                  ({ name, key }: { [key: string]: string }) => {
+                    return (
+                      <>
+                        <p>
+                          <strong style={{ fontWeight: 'bold' }}>key: </strong>
+                          {key}
+                        </p>
+                        <strong style={{ fontWeight: 'bold' }}>language:</strong>
+                        {Object.entries(name).map(([_key, _name], index) => {
+                          return (
+                            <li key={index}>
+                              <strong>{_key}</strong>: {_name}
+                            </li>
+                          )
+                        })}
+                      </>
+                    )
+                  }
 
-          return (
-            <div style={{ border: '1px solid black', margin: 5 }} key={_id}>
-              <p>
-                <strong>key literal:</strong>
-                {title}
-              </p>
-              <p>
-                <strong>typename:</strong>
-                {_type}
-              </p>
-              <p>
-                <strong>id:</strong>
-                {_id}
-              </p>
-              <p>
-                <strong>language:</strong>
-                {Object.entries(name).map((item: any, index) => {
-                  const [key, value] = item;
-                  return (
-                    <li key={index}>
-                      <strong>{key}</strong>: {value}
-                    </li>
-                  )
-                })}
-              </p>
-            </div>
-          )
-        })}
+                )}
+              </div>
+            );
+          }
+        )}
       </div>
-
     </>
   );
 }
 
 export default Main;
+

@@ -1,11 +1,25 @@
 import Layout from '@/components/Layout';
 import Main from '@/components/Main';
-import type { AppProps } from 'next/app';
+import { GetStaticPropsContext } from 'next';
 
-export default function Page() {
+export default function Page(props: { [key: string]: string }) {
+    const { locale, } = props;
+
     return <>
-        <Layout>
+        <Layout params={{ locale }}>
             <Main />
         </Layout>
     </>
+}
+
+export async function getServerSideProps(props: GetStaticPropsContext) {
+    const { locale, locales, params } = props;
+
+    return {
+        props: {
+            locale,
+            locales,
+            test: params || null,
+        },
+    };
 }

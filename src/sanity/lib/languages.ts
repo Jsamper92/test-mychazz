@@ -1,18 +1,5 @@
-import { defineField } from "sanity";
-
-export const supportedLanguages = [
-    { id: 'en', title: 'English', isDefault: true },
-    { id: 'no', title: 'Norwegian' },
-    { id: 'fr', title: 'French' }
-]
-
-export const baseLanguage = supportedLanguages.find(l => l.isDefault);
-
-export const getFieldsLanguage = () => {
-    return supportedLanguages.map(lang => ({
-        title: lang.title,
-        name: lang.id,
-        type: 'string',
-        fieldset: lang.isDefault ? null : 'translations'
-    }))
-}
+export default [
+  { id: 'es', key: 'es-ES', title: 'Español', isDefault: true },
+  { id: 'en', key: 'en-EN', title: 'English' },
+  { id: 'pt', key: 'pt-PT', title: 'Portugues' },
+];

@@ -1,29 +1,25 @@
+import graphQLClient from '@/sanity/lib/client/apollo';
+import { store } from '@/store/store';
+import { ApolloProvider } from '@apollo/client';
 import type { AppProps } from 'next/app';
-import { GetStaticPropsContext } from 'next';
-import { useEffect } from 'react';
-
-
+import { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
+import LocaleContext from '../context/LocaleContext';
+import '../styles/library/scss/abstracts.scss';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [locale, setLocale] = useState('es'); // Valor inicial, por ejemplo 'es'
 
-    const onError = (error: Error) => {
-        console.log('error', error);
-    };
+  useEffect(() => { }, []);
 
-    const handleContentCMS = () => {
+  return (
+    <ApolloProvider client={graphQLClient}>
+      <LocaleContext.Provider value={{ locale, setLocale }}>
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
 
-    }
-
-    useEffect(() => {
-
-    }, []);
-    return <Component {...pageProps} />
-}
-
-export async function getStaticProps({ locale }: GetStaticPropsContext) {
-    return {
-        props: {
-            messages: []
-        }
-    };
+      </LocaleContext.Provider>
+    </ApolloProvider>
+  )
 }

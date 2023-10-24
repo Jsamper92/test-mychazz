@@ -1,11 +1,24 @@
-const { i18n } = require('./next-i18next.config');
-
+const [path, packageJson] = [
+  require('path'),
+  require('./package.json')
+];
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    i18n,
-    eslint: {
-        dirs: ['pages', 'utils'], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
-    },
-}
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'en',
+    localeDetection: true,
+  },
+  reactStrictMode: true,
+  eslint: {
+    dirs: ['pages', 'utils'], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
+  env: {
+    version: packageJson.version,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

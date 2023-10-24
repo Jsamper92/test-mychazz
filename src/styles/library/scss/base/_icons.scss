@@ -1,0 +1,42 @@
+/**
+* Do not edit directly
+* Generated on Mon, 23 Oct 2023 09:58:47 GMT
+*/
+@use '../settings/general';
+
+@font-face {
+  font-display: auto;
+  font-family: 'chazz';
+  font-style: normal;
+  font-weight: 400;
+  src: url('#{general.$font-path}/chazz/chazz.eot?1698055127319');
+  src:
+    url('#{general.$font-path}/chazz/chazz.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{general.$font-path}/chazz/chazz.woff2?1698055127319') format('woff2'),
+    url('#{general.$font-path}/chazz/chazz.woff?1698055127319') format('woff'),
+    url('#{general.$font-path}/chazz/chazz.ttf?1698055127319')
+      format('truetype'),
+    url('#{general.$font-path}/chazz/chazz.svg?1698055127319#chazz')
+      format('svg');
+}
+
+.icon {
+  display: inline-block;
+  font-family: 'chazz';
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ds-icon-arrow::before {
+  content: '\ea01';
+}
+
+.ds-icon-menu-hamburguer::before {
+  content: '\ea02';
+}

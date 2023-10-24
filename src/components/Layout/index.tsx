@@ -1,15 +1,9 @@
-import React, { ReactPortal } from 'react';
-import Main from '../Main';
 
 
-function Layout(props: { children: JSX.Element; }) {
-    const { children } = props;
+function Layout(props: { children: JSX.Element, params: { locale: string } }) {
+  const { children } = props;
 
-    return (
-        <>
-            {children}
-        </>
-    );
+  return <>{children}</>;
 }
 
 export default Layout;

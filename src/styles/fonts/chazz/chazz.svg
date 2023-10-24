@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="chazz" horiz-adv-x="800">
+    <font-face font-family="chazz"
+      units-per-em="800" ascent="800"
+      descent="0" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="ds-icon-arrow"
+      unicode="&#xEA01;"
+      horiz-adv-x="800" d="M0 800H800V0H0V800zM160 500H640V480H160V500zM160 320H640V300H160V320z" />
+    <glyph glyph-name="ds-icon-arrow-1"
+      unicode="&#x64;&#x73;&#x5F;&#x69;&#x63;&#x6F;&#x6E;&#x5F;&#x61;&#x72;&#x72;&#x6F;&#x77;"
+      horiz-adv-x="800" d="M0 800H800V0H0V800zM160 500H640V480H160V500zM160 320H640V300H160V320z" />
+    <glyph glyph-name="ds-icon-menu-hamburguer"
+      unicode="&#xEA02;"
+      horiz-adv-x="800" d="M0 800H800V0H0V800zM160 500H640V480H160V500zM160 320H640V300H160V320z" />
+    <glyph glyph-name="ds-icon-menu-hamburguer-1"
+      unicode="&#x64;&#x73;&#x5F;&#x69;&#x63;&#x6F;&#x6E;&#x5F;&#x6D;&#x65;&#x6E;&#x75;&#x5F;&#x68;&#x61;&#x6D;&#x62;&#x75;&#x72;&#x67;&#x75;&#x65;&#x72;"
+      horiz-adv-x="800" d="M0 800H800V0H0V800zM160 500H640V480H160V500zM160 320H640V300H160V320z" />
+  </font>
+</defs>
+</svg>
