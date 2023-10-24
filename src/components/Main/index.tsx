@@ -1,16 +1,24 @@
 import { GET_PAGES } from '@/queries/pages';
-import graphQLClient from '@/sanity/lib/client/apollo';
 import { useQuery } from '@apollo/client';
-import Image from 'next/image';
 
 function Main() {
-  const { loading, data } = useQuery(GET_PAGES, { client: graphQLClient });
+
+
+  const { loading, data } = useQuery(GET_PAGES, {
+    variables: {
+      title: 'home'
+    }
+  });
+
+
+
+
 
   if (loading) return <p>Loading...</p>;
 
   return (
     <>
-      <Image
+      {/*       <Image
         width={500}
         height={500}
         src="/fondo_chazz.png"
@@ -31,36 +39,43 @@ function Main() {
         style={{
           paddingLeft: '50px',
         }}
-      />
+      /> */}
 
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>
-        {data.allPages && data.allPages.map(
-          ({ title, name, _type, _id }: { [key: string]: string }) => {
+        {data.allPage && data.allPage.map(
+          ({ title, _id, literals, __typename }: { title: string, __typename: string, _id: string, literals: [] }) => {
             return (
-              <div style={{ border: '1px solid black', margin: 5 }} key={_id}>
+              <div style={{ border: '1px solid black', padding: 5 }} key={_id}>
                 <p>
-                  <strong>key literal:</strong>
+                  <strong style={{ fontWeight: 'bold' }}>Module {__typename}:</strong>
                   {title}
                 </p>
                 <p>
-                  <strong>typename:</strong>
-                  {_type}
-                </p>
-                <p>
-                  <strong>id:</strong>
+                  <strong style={{ fontWeight: 'bold' }}>id:</strong>
                   {_id}
                 </p>
-                <p>
-                  <strong>language:</strong>
-                  {Object.entries(name).map(
-                    ([key, value]: [string, string], index: number) => (
-                      <li key={index}>
-                        <strong>{key}</strong>: {value}
-                      </li>
+                {literals.map(
+                  ({ name, key }: { [key: string]: string }) => {
+                    return (
+                      <>
+                        <p>
+                          <strong style={{ fontWeight: 'bold' }}>key: </strong>
+                          {key}
+                        </p>
+                        <strong style={{ fontWeight: 'bold' }}>language:</strong>
+                        {Object.entries(name).map(([_key, _name], index) => {
+                          return (
+                            <li key={index}>
+                              <strong>{_key}</strong>: {_name}
+                            </li>
+                          )
+                        })}
+                      </>
                     )
-                  )}
-                </p>
+                  }
+
+                )}
               </div>
             );
           }
@@ -71,3 +86,4 @@ function Main() {
 }
 
 export default Main;
+

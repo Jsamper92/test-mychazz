@@ -1,13 +1,14 @@
-const [path, packageJson, internationalization] = [
+const [path, packageJson] = [
   require('path'),
-  require('./package.json'),
-  require('./next-i18n.config'),
+  require('./package.json')
 ];
-
-const { i18n } = internationalization;
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  i18n,
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'en',
+    localeDetection: true,
+  },
   reactStrictMode: true,
   eslint: {
     dirs: ['pages', 'utils'], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)

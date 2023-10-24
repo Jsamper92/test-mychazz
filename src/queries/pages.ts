@@ -1,20 +1,19 @@
 import { gql } from '@apollo/client';
 
 export const GET_PAGES = gql`
-  query {
-    allPage {
+query getPage($title: String!) {
+  allPage(where: { title: { eq: $title } }) {
+    _id
+    title
+    literals {
       _id
-      _type
-      _createdAt
-      title
-      literals {
-        key
-        name {
-          es
-          en
-          pt
-        }
+      key
+      name {
+        es
+        en
+        pt
       }
     }
   }
+}
 `;
