@@ -36,7 +36,7 @@ In addition to these two branches, the following auxiliary branches are proposed
   - They are always incorporated into the develop branch.
   - Name: anything other than master, develop, hotfix-_ or release-_
 
-![Features](img/4-gitflow-feature.png)
+![Features](../resources/4-gitflow-feature.png)
 
 - **Release**: These branches are used to prepare the next code in production. In these branches the last adjustments are made and the last bugs are corrected before moving the code to production by incorporating it into the master branch.
   - They originate from the develop branch
@@ -48,8 +48,8 @@ In addition to these two branches, the following auxiliary branches are proposed
   - They join the master and develop
   - Name: hotfix-\*
 
-![Hotfixes](img/4-gitflow-hotfix.png)
+![Hotfixes](../resources/4-gitflow-hotfix.png)
 
 ### GitFlow
 
-![GitFlow](img/4-gitflow.png)
+![GitFlow](../resources/4-gitflow.png)

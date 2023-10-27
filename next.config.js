@@ -1,7 +1,10 @@
-const [path, packageJson] = [
+const [path, packageJson, withMDX] = [
   require('path'),
-  require('./package.json')
+  require('./package.json'),
+  require('@next/mdx')()
 ];
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n: {
@@ -21,4 +24,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withMDX(nextConfig)
