@@ -1,4 +1,6 @@
-
+/**
+ * @memberof Button
+ */
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -24,6 +26,7 @@ interface ButtonProps {
 
 /**
  * Primary UI component for user interaction
+ * @namespace Button
  */
 export const Button = ({
   primary = false,
@@ -32,6 +35,9 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
+  /**
+   * @memberof Button
+   */
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
     <button
