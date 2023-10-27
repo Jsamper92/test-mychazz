@@ -11,10 +11,6 @@ function Main() {
     }
   });
 
-
-
-
-
   if (loading) return <p>Loading...</p>;
 
   return (

@@ -1,5 +1,6 @@
-import Layout from '@/components/Layout';
-import Main from '@/components/Main';
+
+import Layout from '@/components/cdk/Layout';
+import Main from '@/components/cdk/Main';
 import { GetStaticPropsContext } from 'next';
 
 export default function Page(props: { [key: string]: string }) {

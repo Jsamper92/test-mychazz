@@ -14,7 +14,7 @@ export default defineType({
       name: 'literals',
       type: 'array',
       title: 'Literales',
-      of: [{ type: 'reference', to: [{ type: 'literal' }] }],
+      of: [{ type: 'reference', to: [{ type: 'literal', }] }],
     }),
   ],
   preview: {
