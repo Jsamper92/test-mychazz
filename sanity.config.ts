@@ -6,11 +6,10 @@ import { documentInternationalization } from '@sanity/document-internationalizat
 import { visionTool } from '@sanity/vision';
 import { SchemaTypeDefinition, defineConfig, defineField } from 'sanity';
 import { deskTool } from 'sanity/desk';
+import { dataset, projectId } from './sanity/env';
+import supportedLanguages from './sanity/lib/languages';
+import { listSchemaTypes, schema } from './sanity/schema';
 
-// Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import { dataset, projectId } from './src/sanity/env';
-import supportedLanguages from './src/sanity/lib/languages';
-import { listSchemaTypes, schema } from './src/sanity/schema';
 export default defineConfig({
   basePath: '/studio',
   projectId,

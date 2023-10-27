@@ -1,4 +1,4 @@
-import graphQLClient from '@/sanity/lib/client/apollo';
+import graphQLClient from '@/lib/client/apollo';
 import { store } from '@/store/store';
 import { ApolloProvider } from '@apollo/client';
 import type { AppProps } from 'next/app';
