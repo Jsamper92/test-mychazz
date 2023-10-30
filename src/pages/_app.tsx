@@ -12,6 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => { }, []);
 
+
   return (
     <ApolloProvider client={graphQLClient}>
       <LocaleContext.Provider value={{ locale, setLocale }}>

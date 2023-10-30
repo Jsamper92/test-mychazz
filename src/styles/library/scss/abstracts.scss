@@ -1,16 +1,16 @@
 /// Variable path by default of the sources defined in the undefined file.
 /// To modify the path, simply set the variable in the import as follows: @use '/library/web/abstracts' with ($font-path:'public/assets/fonts/');
 /// @group fonts
-$font-path: '/src/styles/fonts' !default;
+$font-path: "/fonts" !default;
 /// Variable that defines the reference unit in order to transform px into rem. By default 16px. To modify the size, simply set the variable in the import as follows: @use '/library/web/abstracts' with ($rem-baseline: 10px);
 /// @group rem
 $rem-baseline: 16px !default;
 
-@use 'settings/general' with (
+@use "settings/general" with (
   $font-path: $font-path,
   $rem-baseline: $rem-baseline
 );
-@use 'base/base.scss';
-@use 'tools/tools.scss';
-@use 'settings/settings.scss';
-@use 'utilities/utilities.scss';
+@use "base/base.scss";
+@use "tools/tools.scss";
+@use "settings/settings.scss";
+@use "utilities/utilities.scss";

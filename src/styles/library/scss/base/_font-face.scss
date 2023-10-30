@@ -1,7 +1,19 @@
 /**
 * Do not edit directly
-* Generated on Mon, 23 Oct 2023 09:58:47 GMT
+* Generated on Mon, 30 Oct 2023 07:33:36 GMT
 */
-@use '../settings/general';
+@use "../settings/general";
 
-// Please include the source file in the src/styles/fonts/Graphic to create the font-faces.
+// Please include the source file in the  to create the font-faces.
+
+@font-face {
+    font-family: "graphik";
+    font-weight: 400;
+    src: url("#{general.$font-path}/Graphik/Graphik-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "graphik";
+    font-weight: 700;
+    src: url("#{general.$font-path}/Graphik/Graphik-Bold.otf") format("opentype");
+}

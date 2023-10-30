@@ -1,6 +1,5 @@
 import { GET_PAGES } from '@/queries/pages';
 import { useQuery } from '@apollo/client';
-import Image from 'next/image';
 
 function Main() {
 
@@ -15,7 +14,7 @@ function Main() {
 
   return (
     <>
-      <Image
+      {/*       <Image
         width={500}
         height={500}
         src="/fondo_chazz.png"
@@ -36,7 +35,7 @@ function Main() {
         style={{
           paddingLeft: '50px',
         }}
-      />
+      /> */}
 
       <div>
         <p>PRUEBA DE RECUPERACION DE INFORMACION DEL BACK</p>

@@ -1,4 +1,4 @@
-@use '../tools/rem' as *;
+@use "../tools/rem" as *;
 /*--------------------------------
 	#RESET
 --------------------------------*/
@@ -190,9 +190,9 @@ h6 a {
 	#BUTTONS
 -------------------------------------*/
 button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   cursor: pointer;
 }
 
@@ -210,7 +210,7 @@ table {
   border-spacing: 0;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   appearance: none;
 }
 
@@ -243,15 +243,6 @@ blockquote,
 dl,
 dd {
   margin: 0;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  padding: 64px 40px;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -296,4 +287,15 @@ select {
 
 html {
   @include rem-baseline;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  padding: 64px 40px;
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-regular);
 }
