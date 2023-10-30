@@ -5,8 +5,8 @@ env:
   SANITY_STUDIO_TOKEN: ${{ secrets.SANITY_STUDIO_TOKEN }}
 on:
   push:
-    branches-ignore:
-      - main
+    branches:
+      - integration
 jobs:
   Sanity-deploy:
     name: Build & Deploy Sanity Studio
